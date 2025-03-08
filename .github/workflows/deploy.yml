@@ -3,7 +3,7 @@ name: Deploy Portfolio Website
 on:
   push:
     branches:
-      - main  # Change this if your default branch is 'master'
+      - master  # Change this if your default branch is 'master'
 
 jobs:
   deploy:
