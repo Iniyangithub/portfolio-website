@@ -4,45 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #555;
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about">
+    <header>My Portfolio</header>
+    
+    <div class="container">
         <h2>About Me</h2>
-        <p>I am a Java Spring Boot Developer with experience in SQL and ReactJS.</p>
-    </section>
+        <p>Hello! I'm a passionate developer.</p>
+        
+        <h2>Projects</h2>
+        <p>List of projects will be added here.</p>
+        
+        <h2>Upload Resume</h2>
+        <input type="file" id="resumeInput">
+        <button onclick="uploadResume()">Upload</button>
+        <p id="resumeStatus"></p>
+        
+        <h2>Download Resume</h2>
+        <a href="resume.pdf" download><button>Download My Resume</button></a>
+    </div>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-            <li><a href="#">Project 1</a></li>
-            <li><a href="#">Project 2</a></li>
-            <li><a href="#">Project 3</a></li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        function uploadResume() {
+            let fileInput = document.getElementById('resumeInput');
+            if (fileInput.files.length > 0) {
+                document.getElementById('resumeStatus').innerText = "Resume uploaded successfully!";
+            } else {
+                document.getElementById('resumeStatus').innerText = "Please select a file first.";
+            }
+        }
+    </script>
 </body>
 </html>
