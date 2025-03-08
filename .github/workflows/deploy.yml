@@ -3,7 +3,7 @@ name: Deploy Portfolio Website
 on:
   push:
     branches:
-      - master  # Change this if your default branch is 'master'
+      - main
 
 jobs:
   deploy:
@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: 16
 
-      - name: Build and Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .  # This should be the folder containing index.html
+          folder: .
+          token: ${{ secrets.GITHUB_TOKEN }}
